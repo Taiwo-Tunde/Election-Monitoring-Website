@@ -11,6 +11,7 @@ const connection = mysql
   })
   .promise();
 
+// fucntion to get individual local goverment results
 async function getLocalGovermentVotes() {
   const localResults = await connection.query(
     "SELECT * FROM announced_lga_results "
@@ -23,6 +24,7 @@ localVotes.then(function (results) {
   console.log(results);
 });
 
+// function to individual polling unit result   from database
 async function announced_pu_results() {
   const puResults = await connection.query(
     "SELECT * FROM announced_pu_results "
@@ -35,4 +37,4 @@ votes.then(function (results) {
   console.log(results);
 });
 
-// module.exports = { getLocalGovermentVots };
+module.exports = { getLocalGovermentVotes, announced_pu_results };
