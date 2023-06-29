@@ -16,7 +16,7 @@ async function getLocalGovermentVotes() {
   const localResults = await connection.query(
     "SELECT * FROM announced_lga_results "
   );
-  return localResults;
+  return localResults[0];
 }
 
 const localVotes = getLocalGovermentVotes();
@@ -29,7 +29,7 @@ async function announced_pu_results() {
   const puResults = await connection.query(
     "SELECT * FROM announced_pu_results "
   );
-  return puResults;
+  return puResults[0];
 }
 
 const votes = announced_pu_results();
