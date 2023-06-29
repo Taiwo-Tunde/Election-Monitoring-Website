@@ -15,13 +15,13 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/Local_Government", async (req, res) => {
-  const votes = await getLocalGovermentVotes();
-  res.send(votes);
+  const lGVotes = await getLocalGovermentVotes();
+  res.send(lGVotes);
 });
 
 app.get("/PU_votes", async (req, res) => {
-  const votes = await announced_pu_results();
-  res.send(votes);
+  const pUVotes = await announced_pu_results();
+  res.send(pUVotes);
 });
 
 app.listen(4000, () => {

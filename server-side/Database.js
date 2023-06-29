@@ -21,7 +21,7 @@ async function getLocalGovermentVotes() {
 
 const localVotes = getLocalGovermentVotes();
 localVotes.then(function (results) {
-  console.log(results);
+  return results;
 });
 
 // function to individual polling unit result   from database
@@ -34,7 +34,7 @@ async function announced_pu_results() {
 
 const votes = announced_pu_results();
 votes.then(function (results) {
-  console.log(results);
+  return results;
 });
 
 module.exports = { getLocalGovermentVotes, announced_pu_results };
