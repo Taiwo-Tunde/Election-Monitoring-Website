@@ -1,5 +1,5 @@
 import "./App.css";
-// import AnnouncedLG from "./component/AnnouncedLG";
+import AnnouncedLG from "./component/AnnouncedLG";
 // import AnnouncedPU from "./component/AnnouncedPU";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { IndividualPU } from "./component/IndividualPU";
@@ -10,7 +10,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* <AnnouncedPU /> */}
-      {/* <AnnouncedLG /> */}
+      <AnnouncedLG />
       <IndividualPU />
     </QueryClientProvider>
   );

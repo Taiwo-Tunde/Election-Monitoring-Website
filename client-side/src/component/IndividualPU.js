@@ -2,9 +2,13 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 export const IndividualPU = () => {
-  const { data } = useQuery(["PU"], () =>
+  const { isLoading, error, data } = useQuery(["PU"], () =>
     axios.get("http://localhost:4000/PU_votes").then((res) => res.data)
   );
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
 
   // Get all items with a specific polling_unit_uniqueid
   if (!Array.isArray(data)) {
