@@ -34,8 +34,8 @@ export const IndividualPU = () => {
   const uniquePollingUnitIds = Object.keys(pollingUnitDataMap);
 
   // Create table components dynamically for each polling_unit_uniqueid
-  const tables = uniquePollingUnitIds.map((unitId) => {
-    const tableData = pollingUnitDataMap[unitId];
+  const tables = uniquePollingUnitIds.map((pUId) => {
+    const tableData = pollingUnitDataMap[pUId];
     const tableHeading = tableData[0];
     const headings = Object.keys(tableHeading);
 
@@ -58,8 +58,8 @@ export const IndividualPU = () => {
     };
 
     return (
-      <div key={unitId}>
-        <h3> RESULTS FOR POLLING UNIT {unitId} </h3>
+      <div key={pUId}>
+        <h3> RESULTS FOR POLLING UNIT {pUId} </h3>
         <table className="table">
           <thead>
             <tr>{ThData()}</tr>
